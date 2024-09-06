@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View, Image, StyleSheet, Pressable } from "react-native"
+import { Text, View, Image, StyleSheet, Pressable, ViewBase } from "react-native"
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
 
@@ -8,12 +8,14 @@ const SinglePage = ({ navigation, route }) => {
     const AinmatedPressable = Animated.createAnimatedComponent(Pressable)
     return (
         <View style={Styles.container} >
-            <Animated.Image
-                sharedTransitionTag={item.name}
-                source={item.dogPic}
-                resizeMode={'cover'}
-                style={{ height: 300,width:"100%" }}
-            />
+            <View style={{ height: "42%", position: "relative" }} >
+                <Animated.Image
+                    sharedTransitionTag={item.name}
+                    source={item.dogPic}
+                    resizeMode="contain"
+                    style={{ height: 300, width: "100%", position: "absolute", bottom: 0 }}
+                />
+            </View>
             <Animated.View
                 // style={styles.textContainer}
                 entering={FadeInDown.duration(1000)}>
