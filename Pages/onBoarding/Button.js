@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet,Text } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 import React from 'react';
 import Animated, {
     Extrapolation,
@@ -13,6 +13,8 @@ import { OnboardingData } from '../data/data';
 import { RootStackParamList } from '../../../navigator/RootNavigator';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
+import { SvgXml } from 'react-native-svg';
+import ICONS from '../../Assets/Svgs/Svg';
 
 const RADIUS = 100;
 
@@ -55,7 +57,7 @@ const Button = ({ x, screenWidth, data, currentIndex }) => {
                 width={40}
                 height={40}
             /> */}
-            <Text>Ravi</Text>
+            <SvgXml xml={ICONS.cloud} />
         </AnimatedPressable>
     );
 };
